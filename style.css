@@ -1,0 +1,649 @@
+/* ===========================
+        RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    font-family:'Inter',sans-serif;
+
+    background:#fff;
+
+}
+
+img{
+
+    user-select:none;
+    -webkit-user-drag:none;
+
+}
+
+button{
+
+    font-family:'Inter',sans-serif;
+
+}
+
+
+
+
+
+
+/* ===========================
+          PAGES
+=========================== */
+
+.page{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.8s ease;
+
+}
+
+.page.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+
+
+
+
+/* ===========================
+        LANDING
+=========================== */
+
+#landing{
+
+    background-image:url("images/me.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.48);
+
+    backdrop-filter:blur(6px);
+
+}
+
+.center{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    color:white;
+
+    animation:fadeUp 1s;
+
+}
+
+.center h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:95px;
+
+    font-weight:500;
+
+    line-height:1.1;
+
+    margin-bottom:55px;
+
+    letter-spacing:-2px;
+
+}
+
+.center button{
+
+    padding:18px 46px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:white;
+
+    color:#111;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.center button:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 60px rgba(255,255,255,.25);
+
+}
+
+
+
+
+
+
+/* ===========================
+       COMMON WRAPPER
+=========================== */
+
+.wrapper{
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.wrapper h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:70px;
+
+    font-weight:500;
+
+    color:#111;
+
+    margin-bottom:50px;
+
+}
+
+
+
+
+
+
+/* ===========================
+        GALLERY
+=========================== */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:28px;
+
+}
+
+.picture{
+
+    width:100%;
+
+    aspect-ratio:16/10;
+
+    object-fit:cover;
+
+    border-radius:24px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+}
+
+.picture:hover{
+
+    transform:translateY(-8px) scale(1.03);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.18);
+
+}
+
+
+
+
+
+
+/* ===========================
+          POPUP
+=========================== */
+
+#popup,
+#flowerPopup{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(5px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+}
+
+#popup.show,
+#flowerPopup.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.popup-card{
+
+    width:420px;
+
+    padding:55px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.95);
+
+    text-align:center;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.15);
+
+}
+
+.popup-card h3{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:45px;
+
+    margin-bottom:35px;
+
+}
+
+.popup-card button{
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#111;
+
+    color:white;
+
+    padding:16px 36px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.popup-card button:hover{
+
+    transform:translateY(-4px);
+
+}
+/* ===========================
+        LOVE PAGE
+=========================== */
+
+.loveButtons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+    margin-top:40px;
+
+    position:relative;
+
+    height:220px;
+
+}
+
+.loveButtons button{
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.35s;
+
+}
+
+#yesBtn{
+
+    background:#111;
+
+    color:white;
+
+}
+
+#yesBtn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+#noBtn{
+
+    background:white;
+
+    color:#111;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    position:absolute;
+
+    left:55%;
+
+}
+
+
+
+
+
+
+/* ===========================
+        FLOWERS
+=========================== */
+
+.flowerGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+.flowerCard{
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:35px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+
+}
+
+.flowerCard:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 28px 70px rgba(0,0,0,.15);
+
+}
+
+.flowerCard img{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:contain;
+
+}
+
+.flowerCard p{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    font-weight:500;
+
+}
+
+
+
+
+
+
+/* ===========================
+        ENDING
+=========================== */
+
+#ending{
+
+    background:white;
+
+    overflow:hidden;
+
+}
+
+#ending h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:82px;
+
+    font-weight:500;
+
+    line-height:1.2;
+
+    color:#111;
+
+    animation:fadeUp 1.2s;
+
+}
+
+#lastThing{
+
+    margin-top:50px;
+
+    padding:18px 42px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#111;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#lastThing:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+
+
+
+/* ===========================
+        LILIES
+=========================== */
+
+#lilyContainer{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+.lily{
+
+    position:absolute;
+
+    top:-120px;
+
+    width:90px;
+
+    animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(-120px) rotate(0deg);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(120vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+
+
+/* ===========================
+        LAST PAGE
+=========================== */
+
+#last{
+
+    background:black;
+
+}
+
+#last h1{
+
+    color:white;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:85px;
+
+    line-height:1.2;
+
+    opacity:0;
+
+    transition:1s;
+
+}
+
+#last h1.show{
+
+    opacity:1;
+
+}
+
+
+
+
+
+
+/* ===========================
+        ANIMATIONS
+=========================== */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
